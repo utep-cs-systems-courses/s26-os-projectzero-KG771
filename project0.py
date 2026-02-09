@@ -15,7 +15,7 @@ def file_reader(input_file):
     
     os.close(fd)
 
-    return chunks.decode("utf-8")
+    return b"".join(chunks).decode("utf-8")
 
 
 def file_writer(output_file, sorted_pairs):
