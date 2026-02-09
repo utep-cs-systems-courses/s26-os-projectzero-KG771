@@ -28,10 +28,13 @@ def file_writer(output_file, dictionary):
 
 
 def word_count(string):
-    lowerStr = string.toLower()
+    #converts all characters to lowercase
+    lowerStr = string.lower()
     
+    #extracts words
     words = re.findall(r"\b\w+\b", lowerStr)
 
+    #initializes and populates dictionary
     wordCounts = {}
     for word in words:
         if word not in wordCounts:
