@@ -20,7 +20,7 @@ def file_reader(input_file):
 
 def file_writer(output_file, sorted_pairs):
     #output file can be write-only, created, or overwritten (if it exists)
-    fd = os.open(output_file, os.O_WRONLY | os.O_CREAT | os.O_TRUNC)
+    fd = os.open(output_file, os.O_WRONLY | os.O_CREAT | os.O_TRUNC , 0o644)
     #print("Output file fd: ", fd)
 
     for key, value in sorted_pairs:
