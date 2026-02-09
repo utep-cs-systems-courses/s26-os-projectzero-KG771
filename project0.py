@@ -8,8 +8,8 @@ def file_reader(input_file):
     
     chunks = []
     while True:
-        data = os.read(fd, 4096)   # read up to 4096 bytes
-        if not data:              # EOF
+        data = os.read(fd, 4096)   
+        if not data:             
             break
         chunks.append(data)
     
