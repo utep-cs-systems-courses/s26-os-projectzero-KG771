@@ -26,9 +26,10 @@ def file_writer(output_file, dictionary):
 
     os.close(fd)
 
+
 def word_count(string):
     lowerStr = string.toLower()
-
+    
 
     wordCounts = {}
     for word in string:
