@@ -14,13 +14,13 @@ def file_reader(input_file):
     return bytesToStr
 
 
-def file_writer(output_file, dictionary):
+def file_writer(output_file, sorted_pairs):
     #output file can be write-only, created, or overwritten (if it exists)
     fd = os.open(output_file, os.O_WRONLY | os.O_CREAT | os.O_TRUNC)
     #print("Output file fd: ", fd)
 
-    for key in dictionary:
-        string = f"{key} {dictionary[key]}\n"
+    for key, value in sorted_pairs:
+        string = f"{key} {value}\n"
         strToBytes = string.encode("utf-8")
         os.write(fd, strToBytes)
 
@@ -49,14 +49,13 @@ def word_count(string):
     return wordCounts
 
 def sort_descending(counts):
-    
-    return 
+    return sorted(counts.items(), key=lambda pair: pair[1], reverse=True)
 
 
 counts = {}
 string = file_reader("declaration.txt")
 counts = word_count(string)
-sort_descending(counts)
+counts = sort_descending(counts)
 file_writer("output.txt", counts)
 
 
