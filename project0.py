@@ -7,12 +7,12 @@ def file_reader(input_file):
     #print("Input file fd: ", fd)
     
     info = os.read(fd, 17138)
-    print("File reader info:", info)
-
+    bytesToStr = info.decode("utf-8")
+    
     os.close(fd)
 
-def extract_text():
-    
+    return bytesToStr
+
 
 def file_writer(output_file, dictionary):
     #output file can be write-only, created, or overwritten (if it exists)
@@ -26,7 +26,10 @@ def file_writer(output_file, dictionary):
 
     os.close(fd)
 
-def word_count(words):
+def word_count(string, words):
+    lowerStr = string.toLower()
+    
+
     wordCounts = {}
     for word in words:
         if word not in wordCounts:
@@ -37,5 +40,5 @@ def word_count(words):
 
 
 file_reader("declaration.txt")
-file_writer("output.txt", )
+file_writer("output.txt")
 
