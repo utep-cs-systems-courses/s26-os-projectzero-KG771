@@ -27,12 +27,17 @@ def file_writer(output_file, dictionary):
     os.close(fd)
 
 
-def word_count(string):
+def extract_words(string):
     #converts all characters to lowercase
     lowerStr = string.lower()
-    
     #extracts words
     words = re.findall(r"\b\w+\b", lowerStr)
+
+    return words
+
+
+def word_count(string):
+    words = extract_words(string)
 
     #initializes and populates dictionary
     wordCounts = {}
