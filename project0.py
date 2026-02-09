@@ -9,11 +9,15 @@ def file_reader(input_file):
     info = os.read(fd, 17138)
     print("File reader info:", info)
 
-def file_writer(output_file):
+def file_writer(output_file, dictionary):
     #output file can be write-only, created, or overwritten (if it exists)
     fd = os.open(output_file, os.O_WRONLY | os.O_CREAT | os.O_TRUNC)
     #print("Output file fd: ", fd)
-    info = os.write(fd, b"hii")
+
+    for key in dictionary:
+        string = f"{key} {dictionary[key]}"
+        strToBytes = string.encode("utf-8")
+        os.write(fd, strToBytes)
 
 def word_count(words):
     wordCounts = {}
