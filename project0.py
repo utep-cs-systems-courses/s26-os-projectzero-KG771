@@ -53,12 +53,12 @@ def word_count(string):
             wordCounts[word] += 1
     return wordCounts
 
+
 def sort_descending(counts):
     return sorted(counts.items(), key=lambda pair: pair[1], reverse=True)
 
 
 if __name__ == "__main__":
-
     counts = {}
     string = file_reader(sys.argv[1])
     counts = word_count(string)
