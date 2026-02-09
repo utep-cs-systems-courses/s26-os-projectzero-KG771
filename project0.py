@@ -6,12 +6,16 @@ def file_reader(input_file):
     fd = os.open(input_file, os.O_RDONLY)
     #print("Input file fd: ", fd)
     
-    info = os.read(fd, 17138)
-    bytesToStr = info.decode("utf-8")
+    chunks = []
+    while True:
+        data = os.read(fd, 4096)   # read up to 4096 bytes
+        if not data:              # EOF
+            break
+        chunks.append(data)
     
     os.close(fd)
 
-    return bytesToStr
+    return chunks.decode("utf-8")
 
 
 def file_writer(output_file, sorted_pairs):
