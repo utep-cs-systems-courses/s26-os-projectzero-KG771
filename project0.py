@@ -26,12 +26,12 @@ def file_writer(output_file, dictionary):
 
     os.close(fd)
 
-def word_count(string, words):
+def word_count(string):
     lowerStr = string.toLower()
-    
+
 
     wordCounts = {}
-    for word in words:
+    for word in string:
         if word not in wordCounts:
             wordCounts[word] = 1
         else:
@@ -39,6 +39,7 @@ def word_count(string, words):
     return wordCounts
 
 
-file_reader("declaration.txt")
+string = file_reader("declaration.txt")
 file_writer("output.txt")
+word_count(string)
 
