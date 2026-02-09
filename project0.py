@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 
 def file_reader(input_file):
     #input files can be read only (os.O_RDONLY)
@@ -57,9 +58,9 @@ def sort_descending(counts):
 
 
 counts = {}
-string = file_reader("declaration.txt")
+string = file_reader(sys.argv[1])
 counts = word_count(string)
 counts = sort_descending(counts)
-file_writer("output.txt", counts)
+file_writer(sys.argv[2], counts)
 
 
