@@ -30,9 +30,10 @@ def file_writer(output_file, dictionary):
 def word_count(string):
     lowerStr = string.toLower()
     
+    words = re.findall(r"\b\w+\b", lowerStr)
 
     wordCounts = {}
-    for word in string:
+    for word in words:
         if word not in wordCounts:
             wordCounts[word] = 1
         else:
