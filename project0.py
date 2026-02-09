@@ -57,10 +57,12 @@ def sort_descending(counts):
     return sorted(counts.items(), key=lambda pair: pair[1], reverse=True)
 
 
-counts = {}
-string = file_reader(sys.argv[1])
-counts = word_count(string)
-counts = sort_descending(counts)
-file_writer(sys.argv[2], counts)
+if __name__ == "__main__":
+
+    counts = {}
+    string = file_reader(sys.argv[1])
+    counts = word_count(string)
+    counts = sort_descending(counts)
+    file_writer(sys.argv[2], counts)
 
 
