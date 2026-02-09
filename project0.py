@@ -48,8 +48,15 @@ def word_count(string):
             wordCounts[word] += 1
     return wordCounts
 
+def sort_descending(counts):
+    
+    return 
 
+
+counts = {}
 string = file_reader("declaration.txt")
-file_writer("output.txt")
-word_count(string)
+counts = word_count(string)
+sort_descending(counts)
+file_writer("output.txt", counts)
+
 
