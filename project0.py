@@ -55,7 +55,7 @@ def word_count(string):
 
 
 def sort_descending(counts):
-    return sorted(counts.items(), key=lambda pair: pair[1], reverse=True)
+    return sorted(counts.items())
 
 
 if __name__ == "__main__":
