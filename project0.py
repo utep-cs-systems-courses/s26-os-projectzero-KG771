@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import re
 import sys
@@ -37,6 +39,7 @@ def extract_words(string):
     lowerStr = string.lower()
     #extracts words
     words = re.findall(r"\b\w+\b", lowerStr)
+
 
     return words
 
